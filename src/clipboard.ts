@@ -44,6 +44,8 @@ export const Clipboard = {
       if (selection) {
         selection.removeAllRanges()
         selection.addRange(range)
+
+        textarea.focus() // Required by iOS 18.4+: https://developer.apple.com/documentation/safari-release-notes/safari-18_4-release-notes#Resolved-Issues
         textarea.setSelectionRange(0, 999999)
       }
     } else {
